@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# runansible
+
+mypath="${PWD}/${0%/*}"
+
+args="$*"
+hosts="${mypath}/hosts"
+playbook="${mypath}/site.yml"
+
+if [[ ! -f "$playbook" ]]; then
+	echo "Playbook $playbook not found, bailing out!"
+	exit 1
+fi
+
+ansible-playbook -i hosts $playbook
