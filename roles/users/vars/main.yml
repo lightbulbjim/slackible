@@ -1,0 +1,6 @@
+---
+users:
+  - chris
+
+# Temporary password for all new users is 'changeme'
+password_hash: '$6$rounds=656000$Vw.M7qDgd6PJ.8/u$i9nnrrma4GESRd603TAlVvPaZMTukBvIhjk/ky8CGwW/8ja.gJFcgYsdqn4CsMjGMNLtarf1mW9KJgcg.4QUb.'
