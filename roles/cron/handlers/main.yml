@@ -1,0 +1,3 @@
+---
+- name: restart crond
+  shell: 'pkill crond && {{ crond }} {{ crond_flags }}'

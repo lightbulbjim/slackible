@@ -1,0 +1,3 @@
+---
+crond: '/usr/sbin/crond'
+crond_flags: '-l notice -M /usr/bin/true'

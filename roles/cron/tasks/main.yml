@@ -1,0 +1,4 @@
+---
+- name: Ensure standard system cron jobs run asynchronously
+  copy: src=crontab.root dest=/var/spool/cron/crontabs/root owner=root group=root mode=0600
+  notify: restart crond
