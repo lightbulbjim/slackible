@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  vars:
+    network_available: true
   roles:
     - users
     - cron

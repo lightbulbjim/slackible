@@ -16,6 +16,7 @@
   with_items:
     - all.sqf
 
-- name: Ensure Ruby stuff is installed
-  gem: name={{ item }} state=present
+- name: Ensure system Ruby gems are installed
+  gem: name={{ item }} user_install=no state=present
   with_items: gems
+  when: network_available
