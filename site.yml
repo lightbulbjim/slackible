@@ -3,3 +3,4 @@
   roles:
     - users
     - cron
+    - packages

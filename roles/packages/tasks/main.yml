@@ -1,0 +1,12 @@
+---
+- name: Ensure sbopkg queue directory exists
+  file: path={{ item }} owner=root group=root mode=0755 state=directory
+  with_items:
+    - /var/lib/sbopkg
+    - /var/lib/sbopkg/queues
+
+- name: Ensure sbopkg queue files are in place
+  copy: src=sbopkg/queues/{{ item }} dest=/var/lib/sbopkg/queues/{{ item }}
+      owner=root group=root mode=0644
+  with_items:
+    - all.sqf

@@ -1,0 +1,4 @@
+virtualenv
+virtualenv-clone
+virtualenvwrapper
+youtube-dl
