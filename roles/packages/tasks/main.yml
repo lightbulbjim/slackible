@@ -1,9 +1,14 @@
 ---
-- name: Ensure sbopkg queue directory exists
+- name: Ensure sbopkg directories exist
   file: path={{ item }} owner=root group=root mode=0755 state=directory
   with_items:
+    - /etc/sbopkg
     - /var/lib/sbopkg
     - /var/lib/sbopkg/queues
+
+- name: Ensure sbopkg is configured
+  copy: src=sbopkg/conf/sbopkg.conf dest=/etc/sbopkg/sbopkg.conf
+      owner=root group=root mode=0644
 
 - name: Ensure sbopkg queue files are in place
   copy: src=sbopkg/queues/{{ item }} dest=/var/lib/sbopkg/queues/{{ item }}
