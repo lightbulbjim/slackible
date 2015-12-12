@@ -4,3 +4,6 @@
       password={{ password_hash }} update_password=on_create state=present
   with_items: users
 
+- name: Ensure sudoers are configured correctly
+  template: src=sudoers.j2 dest=/etc/sudoers validate='visudo -cf %s'
+      owner=root group=root mode=0440
