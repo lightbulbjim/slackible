@@ -12,4 +12,4 @@ if [[ ! -f "$playbook" ]]; then
 	exit 1
 fi
 
-ansible-playbook -i hosts $playbook
+ansible-playbook -i hosts $args $playbook
