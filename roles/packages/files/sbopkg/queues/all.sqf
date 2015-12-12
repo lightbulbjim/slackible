@@ -1,3 +1,6 @@
+# Managed by Ansible
+# Queue of all packages
+
 # Dependencies
 cd-discid
 fuse-exfat

@@ -1,3 +1,5 @@
+# Managed by Ansible
+#
 # If you don't want the output of a cron job mailed to you, you have to direct
 # any output to /dev/null.  We'll do this here since these jobs should run
 # properly on a newly installed system.  If a script fails, run-parts will

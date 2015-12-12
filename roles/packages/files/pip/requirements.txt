@@ -1,3 +1,5 @@
+# Managed by Ansible
+
 virtualenv
 virtualenv-clone
 virtualenvwrapper
