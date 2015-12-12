@@ -20,3 +20,7 @@
   gem: name={{ item }} user_install=no state=present
   with_items: gems
   when: network_available
+
+- name: Ensure system PIP requirements file is present
+  copy: src=pip/requirements.txt dest=/etc/requirements.txt
+      owner=root group=root mode=0644
