@@ -15,6 +15,11 @@ SDL_sound
 stfl
 sword
 
+# Fonts
+culmus
+GentiumPlus
+ttf-bitstream-vera
+
 # Apps
 abcde
 bibletime
@@ -41,7 +46,6 @@ rxvt-unicode
 sigil
 sylpheed
 tagtool
-ttf-bitstream-vera
 unrar
 wesnoth
 wmname
