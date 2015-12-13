@@ -3,6 +3,7 @@
   vars:
     network_available: true
   roles:
+    - time
     - users
     - cron
     - packages

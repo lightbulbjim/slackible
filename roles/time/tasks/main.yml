@@ -1,0 +1,12 @@
+---
+- name: Ensure hardware clock is configured to use local time
+  copy: src=hardwareclock dest=/etc/hardwareclock
+      owner=root group=root mode=0644
+
+- name: Ensure timezone is configured
+  copy: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime
+      remote_src=True owner=root group=root mode=0644
+
+- name: Ensure ntpd is configured
+  copy: src=ntp.conf dest=/etc/ntp.conf
+    owner=root group=root mode=0644
