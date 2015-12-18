@@ -1,0 +1,52 @@
+#!/bin/sh
+# Managed by Ansible
+#
+# /etc/rc.d/rc.local:  Local system initialization script.
+#
+# Put any local startup commands in here.  Also, if you have
+# anything that needs to be run at shutdown time you can
+# make an /etc/rc.d/rc.local_shutdown script and put those
+# commands in there.
+
+# Create directories which pkg utils expect
+for d in $(find /var/pkg -type d -mindepth 1 -maxdepth 1); do 
+	ln -s $d /var/log/
+done
+
+# Enable WLAN
+rfkill unblock 0
+rfkill unblock 1
+
+# Prevent lockup when lid is closed
+# Seems to be not needed with 13.1 kernel
+#echo 7 > /proc/acpi/video/C09A/DOS
+
+if [ -x /etc/rc.d/rc.privoxy ]; then
+	/etc/rc.d/rc.privoxy start
+fi
+
+# Configure "presentation" key
+setkeycodes e008 110 &
+
+echo 0 > /proc/sys/vm/swappiness
+echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+#echo 5 > /sys/bus/pci/drivers/iwl4965/0000\:10\:00.0/power_level
+#echo ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#echo ondemand > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+echo 0 > /proc/sys/kernel/dmesg_restrict
+
+# Power saving
+echo 5 > /proc/sys/vm/laptop_mode
+#echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
+#echo 10 > /sys/module/snd_hda_intel/parameters/power_save
+ethtool -s eth0 wol d
+
+if [ -x /etc/rc.d/rc.dovecot ]; then
+	/etc/rc.d/rc.dovecot start
+fi
+
+# VirtualBox Stuff
+# Start service
+#if [ -x /etc/rc.d/rc.vboxdrv ]; then
+#  /etc/rc.d/rc.vboxdrv start
+#fi

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Managed by Ansible
+
+if [ -x /etc/rc.d/rc.docker ]; then
+	/etc/rc.d/rc.docker stop
+fi
+
+if [ -x /etc/rc.d/rc.dovecot ]; then
+  /etc/rc.d/rc.dovecot stop
+fi
+
+if [ -x /etc/rc.d/rc.vboxdrv ]; then
+  /etc/rc.d/rc.vboxdrv stop
+fi
+
+if [ -x /etc/rc.d/rc.privoxy ]; then
+  /etc/rc.d/rc.privoxy stop
+fi
