@@ -1,0 +1,51 @@
+---
+
+enabled_services:
+  - acpid
+  - alsa
+  - consolekit
+  - cups
+  - dovecot
+  - firewall
+  - inet1
+  - inet2
+  - loop
+  - mcelog
+  - messagebus
+  - modules
+  - ntpd
+  - postgresql
+  - syslog
+  - sysvinit
+  - udev
+  - ulogd
+  - wicd
+  - wireless
+
+disabled_services:
+  - alsa-oss
+  - atalk
+  - autofs
+  - bind
+  - bluetooth
+  - cgconfig
+  - cgred
+  - dnsmasq
+  - font
+  - fuse
+  - gpm-sample
+  - httpd
+  - ip_forward
+  - mysqld
+  - nfsd
+  - pcmcia
+  - php-fpm
+  - rpc
+  - samba
+  - saslauthd
+  - sendmail
+  - serial
+  - snmpd
+  - sshd
+  - sysstat
+  - yp
