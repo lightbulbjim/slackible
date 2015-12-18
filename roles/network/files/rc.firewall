@@ -1,0 +1,86 @@
+#! /bin/sh
+# Firewall Init Script
+# Managed by Ansible
+
+IPT=/usr/sbin/iptables
+IPTSAVE=/usr/sbin/iptables-save
+IPTRESTORE=/usr/sbin/iptables-restore
+IPTCONF=/etc/iptables.conf
+MODPROBE=/sbin/modprobe
+ECHO=/usr/bin/echo
+
+FILTERCHAINS="INPUT OUTPUT FORWARD"
+NATCHAINS="PREROUTING OUTPUT POSTROUTING"
+
+up()
+{
+	if [ ! -f "$IPTCONF" ]; then
+		$ECHO "Cannot find file $IPTCONF; not loading firewall rules."
+	else
+		$IPTRESTORE < $IPTCONF
+		$ECHO "Netfilter shields are up." 
+	fi
+}
+
+down()
+{
+	# Set all default policies to ACCEPT
+	for c in INPUT FORWARD OUTPUT; do
+		$IPT -t filter -P $c ACCEPT
+	done
+	for c in PREROUTING OUTPUT POSTROUTING; do
+		$IPT -t nat -P $c ACCEPT
+	done
+	for c in PREROUTING INPUT FORWARD OUTPUT POSTROUTING; do
+		$IPT -t mangle -P $c ACCEPT
+	done
+	for c in PREROUTING OUTPUT; do
+		$IPT -t raw -P $c ACCEPT
+	done
+
+	# Flush tables
+	for t in filter nat mangle raw; do
+		$IPT -t $t -F
+	done
+
+	# Remove non-default chains
+	for t in filter nat mangle raw; do
+		$IPT -t $t -X
+	done
+}
+
+status()
+{
+	$ECHO "----------------------------------------------------"
+	$ECHO -e "\nNAT Table:\n"
+	$IPT -t nat -L --line-numbers -n -v
+	$ECHO -e "\n"
+	$ECHO "----------------------------------------------------"
+	$ECHO -e "\nFilter Table:\n"
+	$IPT -t filter -L --line-numbers -n -v
+	$ECHO -e "\n"
+	$ECHO "----------------------------------------------------"
+}
+
+case "$1" in
+start)
+	down && up
+	;;
+stop)
+	down
+	$ECHO "Netfilter shields are down." 
+	;;
+restart)
+	down
+	$ECHO "Netfilter shields are down." 
+	up
+	;;
+status)
+	status
+	;;
+*)
+	$ECHO "Usage: $0 {start|stop|restart|status}"
+	exit 1
+esac
+
+exit 0
