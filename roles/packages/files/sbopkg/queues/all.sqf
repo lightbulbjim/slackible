@@ -41,6 +41,7 @@ newsbeuter
 p7zip
 pip
 postgresql
+python3
 rust
 rxvt-unicode
 sigil
