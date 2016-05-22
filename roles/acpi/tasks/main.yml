@@ -9,9 +9,7 @@
   copy: src={{ item }} dest=/etc/acpi/{{ item }} owner=root group=root mode=0755
   with_items:
     - acpi_handler.sh
-    - hibernate.sh
-    - hibernate_battery.sh
-    - suspend.sh
+    - battery_shutdown.sh
 
 - name: Ensure acpid hooks are configured
   copy: src=events/{{ item }} dest=/etc/acpi/events/{{ item }} owner=root group=root mode=0644
