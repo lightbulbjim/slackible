@@ -1,0 +1,154 @@
+#!/usr/bin/env bash
+# caffeinate - prevent system from sleeping for a specified time
+
+default_period=1
+default_units="hours"
+state_file="/tmp/.caffeination"
+
+now="$(date '+%s')"
+
+
+# Print message if quiet mode is not enabled
+# Arg 1 - message
+function shout {
+	[[ $quiet -eq 0 ]] && echo "$*"
+}
+
+
+# Check if var is an int
+# Arg 1 - var
+function isInt {
+	[[ "$1" =~ ^[0-9]+$ ]] && return 0
+	return 1
+}
+
+
+# Arg 1 - period
+# Arg 2 - units
+function prettyPrintUnits {
+	local period="$1"
+	local units="$2"
+
+	if [[ "$period" -eq 1 ]]; then
+		echo -n "$period ${units%s}"
+	else
+		echo -n "$period ${units%s}s"
+	fi
+}
+
+
+# Arg 1 - seconds
+function prettyPrintTime {
+	local seconds="$1"
+	local real_minutes="$(( $seconds / 60 ))"
+
+	local hours="$(( $real_minutes / 60 ))"
+	local minutes="$(( $real_minutes % 60 ))"
+
+	# TODO - clean me up
+	if [[ $hours -gt 0 ]] && [[ $minutes -gt 0 ]]; then
+		echo -n "$(prettyPrintUnits $hours hours) and $(prettyPrintUnits $minutes minutes)"
+	elif [[ $hours -gt 0 ]]; then
+		echo -n "$(prettyPrintUnits $hours hours)"
+	elif [[ $minutes -gt 0 ]]; then
+		echo -n "$(prettyPrintUnits $minutes minutes)"
+	fi
+}
+
+
+function usage {
+	cat <<-EOF
+	Prevent the system from sleeping for a specified period of time.
+
+	Usage: $0 [-hc] <timespec>
+
+	  -h  Display this message.
+	  -c  Check whether the system is currently caffeinated. Return codes
+	      allow non-interactive use. A return code of 0 indicates that the
+	      system is caffeinated and not allowed to sleep, while a return
+	      code of 1 indicates that sleep is permitted.
+	  
+	  Timespec is how long to caffeinate for. There are three ways to
+	  specify the time:
+	    - A suffix of 'h' or 'm' designates hours or minutes, respectively.
+	    - No suffix means hours.
+	    - If the timespec is omitted altogether then the default of $(prettyPrintUnits $default_period $default_units)
+	      is used.
+
+	  Note that a timespec of 0 effectively cancels any active caffeination.
+	EOF
+	exit 0
+}
+
+
+# Convert hours or minutes to seconds
+# Arg 1 - period
+# Arg 2 - units ('minutes' or 'hours')
+function convertToSeconds {
+	local period="$1"
+	local units="$2"
+
+	case $units in
+		minutes) echo $(( $period * 60 )) ;;
+		hours)   echo $(( $period * 3600 )) ;;
+	esac
+}
+
+
+touch $state_file
+chmod 777 $state_file
+if [[ ! -w $state_file ]]; then
+	echo "Cannot write to $state_file - bailing out!"
+	exit 1
+fi
+
+case "$1" in
+	-h)
+		usage
+		;;
+	-c)
+		until="$(cat $state_file)"
+		if ! isInt $until; then
+			echo "State file is mangled - system not caffeinated"
+			exit 1
+		fi
+
+		if (( $now < $until )); then
+			delta="$(( $until - $now ))"
+			echo "$(prettyPrintTime $delta) to go until bed time"
+			exit 0
+		fi
+		echo "Not currently caffeinated"
+		exit 1
+		;;
+	*h)
+		period="${1%h}"
+		units="hours"
+		;;
+	*m)
+		period="${1%m}"
+		units="minutes"
+		;;
+	'')
+		period="$default_period"
+		units="$default_units"
+		;;
+	*)
+		period="$1"
+		units="hours"
+		;;
+esac
+
+# Make sure $period is an int
+if ! isInt $period; then
+	usage
+fi
+
+if [[ $period -eq 0 ]]; then
+	echo "Cancelling caffeination"
+else
+	echo "Caffeinating for $(prettyPrintUnits $period $units)"
+fi
+
+caffeinate_until=$(( $now + $(convertToSeconds $period $units) ))
+echo $caffeinate_until > $state_file

@@ -6,12 +6,17 @@
     - /etc/acpi/events
 
 - name: Ensure acpid handler scripts are configured
-  copy: src={{ item }} dest=/etc/acpi/{{ item }} owner=root group=root mode=0755
+  copy: src=etc/acpi/{{ item }} dest=/etc/acpi/{{ item }} owner=root group=root mode=0755
   with_items:
     - acpi_handler.sh
     - battery_shutdown.sh
 
 - name: Ensure acpid hooks are configured
-  copy: src=events/{{ item }} dest=/etc/acpi/events/{{ item }} owner=root group=root mode=0644
+  copy: src=etc/acpi/events/{{ item }} dest=/etc/acpi/events/{{ item }} owner=root group=root mode=0644
   with_items:
     - default
+
+- name: Ensure misc ACPI utilities are installed
+  copy: src=usr/local/bin/{{ item }} dest=/usr/local/bin/{{ item }} owner=root group=root mode=0755
+  with_items:
+    - caffeinate
