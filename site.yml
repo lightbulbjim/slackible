@@ -8,4 +8,5 @@
     - cron
     - packages
     - network
+    - acpi
     - services
