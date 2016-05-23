@@ -12,6 +12,7 @@ pysetuptools
 qt5
 scons
 SDL_sound
+speex
 stfl
 sword
 
@@ -22,6 +23,7 @@ ttf-bitstream-vera
 
 # Apps
 abcde
+apulse
 bibletime
 ctorrent
 dosbox
@@ -45,6 +47,7 @@ python3
 rust
 rxvt-unicode
 sigil
+skype
 sylpheed
 tagtool
 unrar
