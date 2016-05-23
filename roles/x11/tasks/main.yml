@@ -1,0 +1,6 @@
+---
+- name: Ensure X11 config files are in place
+  copy: src=xorg.conf.d/{{ item }} dest=/etc/X11/xorg.conf.d/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - '50-pointstick.conf'
+    - '50-synaptics.conf'

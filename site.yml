@@ -9,4 +9,5 @@
     - packages
     - network
     - acpi
+    - x11
     - services
