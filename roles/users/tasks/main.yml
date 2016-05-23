@@ -7,3 +7,15 @@
 - name: Ensure sudoers are configured correctly
   template: src=sudoers.j2 dest=/etc/sudoers validate='visudo -cf %s'
       owner=root group=root mode=0440
+
+- name: Ensure root's vim config directories exist
+  file: path=/root/{{ item }} owner=root group=root mode=0755 state=directory
+  with_items:
+    - .vim
+    - .vim/colors
+
+- name: Configure root's vim environment
+  copy: src=root/{{ item }} dest=/root/.{{ item }} owner=root group=root mode=0644
+  with_items:
+    - vimrc
+    - vim/colors/Tomorrow-Night-Mod.vim
