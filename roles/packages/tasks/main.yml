@@ -1,4 +1,20 @@
 ---
+- name: Ensure slackpkg directories exist
+  file: path={{ item }} owner=root group=root mode=0755 state=directory
+  with_items:
+    - /etc/slackpkg
+    - /etc/slackpkg/templates
+
+- name: Ensure slackpkg is configured
+  copy: src=slackpkg{{ item }} dest=/etc/slackpkg/{{ item }}
+      owner=root group=root mode=0644
+  with_items:
+    - blacklist
+    - greylist
+    - mirrors
+    - slackpkg.conf
+    - slackpkgplus.conf
+
 - name: Ensure sbopkg directories exist
   file: path={{ item }} owner=root group=root mode=0755 state=directory
   with_items:
