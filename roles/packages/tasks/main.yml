@@ -6,7 +6,7 @@
     - /etc/slackpkg/templates
 
 - name: Ensure slackpkg is configured
-  copy: src=slackpkg{{ item }} dest=/etc/slackpkg/{{ item }}
+  copy: src=slackpkg/{{ item }} dest=/etc/slackpkg/{{ item }}
       owner=root group=root mode=0644
   with_items:
     - blacklist
