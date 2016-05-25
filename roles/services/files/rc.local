@@ -28,6 +28,7 @@ fi
 # Configure "presentation" key
 setkeycodes e008 110 &
 
+echo noop > /sys/block/sda/queue/scheduler
 echo 0 > /proc/sys/vm/swappiness
 echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
 #echo 5 > /sys/bus/pci/drivers/iwl4965/0000\:10\:00.0/power_level
