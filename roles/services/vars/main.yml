@@ -7,6 +7,7 @@ enabled_services:
   - cups
   - dovecot
   - firewall
+  - font
   - inet1
   - inet2
   - loop
@@ -31,7 +32,6 @@ disabled_services:
   - cgconfig
   - cgred
   - dnsmasq
-  - font
   - fuse
   - gpm-sample
   - httpd
