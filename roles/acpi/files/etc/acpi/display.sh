@@ -5,6 +5,6 @@
 brightness_change_percent=5
 
 case "$1" in
-	'video/brightnessdown') xbacklight -time 0 -dec ${brightneww_change_percent};;
-	'video/brightnessup') xbacklight -time 0 -inc ${brightneww_change_percent};;
+	'video/brightnessdown') xbacklight -time 100 -dec ${brightness_change_percent};;
+	'video/brightnessup') xbacklight -time 100 -inc ${brightness_change_percent};;
 esac
