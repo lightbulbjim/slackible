@@ -16,5 +16,8 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-event=.*
-action=/etc/acpi/acpi_handler.sh %e
+event=button/power.*
+action=/etc/acpi/power_states.sh %e
+
+event=button/lid.*
+action=/etc/acpi/power_states.sh %e

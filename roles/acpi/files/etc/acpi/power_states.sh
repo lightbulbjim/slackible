@@ -2,7 +2,7 @@
 # Managed by Ansible
 # Main ACPI script that takes an entry for all actions
 
-lid="/proc/acpi/button/lid/C155"
+lid="/proc/acpi/button/lid/LID"
 
 # Daemons which don't like sleeping.
 # List in order they need to be killed (will be reversed on wake).
