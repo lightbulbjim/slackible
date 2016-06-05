@@ -29,7 +29,7 @@ function runasXuser {
 
 function lock_screen {
 	pkill xlock
-	runasXuser "/usr/bin/xlock -nice 19 -mode flame -dpmsoff 60 -background black -foreground white &" 2>/dev/null
+	runasXuser "/usr/bin/xlock &" 2>/dev/null
 }
 
 
