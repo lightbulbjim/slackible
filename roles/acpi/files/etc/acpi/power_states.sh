@@ -9,8 +9,10 @@ cranky_daemons=( )
 
 # Run things as the current X user. Necessary for screen locker.
 function runasXuser {
+	local Xcmd="/usr/libexec/Xorg"
+
 	Xtty=$(</sys/class/tty/tty0/active)
-	Xpid=$(pgrep -t $Xtty -f /usr/bin/X)
+	Xpid=$(pgrep -t $Xtty -f $Xcmd)
 		
 	Xenv+=("$(egrep -aoz 'USER=.+' /proc/$Xpid/environ)")
 	Xenv+=("$(egrep -aoz 'XAUTHORITY=.+' /proc/$Xpid/environ)")
@@ -54,6 +56,7 @@ function caffeinated {
 
 # Run this before suspend/hibernate
 function freeze {
+	lock_screen
 	wake_daemons=()
 	for d in ${cranky_daemons[@]}; do
 		if ps ax | grep $d | grep -v grep >/dev/null; then
@@ -65,7 +68,6 @@ function freeze {
 	/sbin/umount -l /mnt/sd
 	/usr/sbin/alsactl store
 	/sbin/hwclock --systohc
-	lock_screen
 }
 
 
@@ -76,7 +78,10 @@ function do_sleep {
 
 	freeze
 	ps auxf > /root/${mode}.ps.log
-	/usr/sbin/pm-${mode}
+	case $mode in
+		suspend) echo mem > /sys/power/state;;
+		hibernate) echo disk > /sys/power/state;;
+	esac
 	thaw
 }
 
