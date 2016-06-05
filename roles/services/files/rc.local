@@ -8,23 +8,23 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 
-echo noop > /sys/block/sda/queue/scheduler
-echo 0 > /proc/sys/vm/swappiness
-echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+echo 1 > /proc/sys/vm/swappiness
+echo deadline > /sys/block/sda/queue/scheduler
+#echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
 #echo 5 > /sys/bus/pci/drivers/iwl4965/0000\:10\:00.0/power_level
 #echo ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 #echo ondemand > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
 echo 0 > /proc/sys/kernel/dmesg_restrict
 
 # Power saving
-echo 5 > /proc/sys/vm/laptop_mode
+#echo 5 > /proc/sys/vm/laptop_mode
 #echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
 #echo 10 > /sys/module/snd_hda_intel/parameters/power_save
-ethtool -s eth0 wol d
+#ethtool -s eth0 wol d
 
-if [ -x /etc/rc.d/rc.dovecot ]; then
-	/etc/rc.d/rc.dovecot start
-fi
+#if [ -x /etc/rc.d/rc.dovecot ]; then
+#	/etc/rc.d/rc.dovecot start
+#fi
 
 # VirtualBox Stuff
 # Start service
