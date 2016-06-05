@@ -45,7 +45,6 @@ pip
 postgresql
 python3
 rust
-rxvt-unicode
 sigil
 skype
 sylpheed
