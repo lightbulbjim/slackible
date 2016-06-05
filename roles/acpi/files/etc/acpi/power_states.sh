@@ -6,7 +6,7 @@ lid="/proc/acpi/button/lid/LID"
 
 # Daemons which don't like sleeping.
 # List in order they need to be killed (will be reversed on wake).
-cranky_daemons=( dovecot ntpd )
+cranky_daemons=( )
 
 
 # Run things as the current X user. Necessary for screen locker.
@@ -56,8 +56,6 @@ function caffeinated {
 
 # Run this before suspend/hibernate
 function freeze {
-	pkill mbsync
-
 	wake_daemons=()
 	for d in ${cranky_daemons[@]}; do
 		if ps ax | grep $d | grep -v grep >/dev/null; then
@@ -90,11 +88,6 @@ function thaw {
 	caffeinate 0 >/dev/null 2>&1
 	/sbin/hwclock --hctosys
 	/usr/sbin/alsactl restore
-
-	# Spin down fans
-	for i in {1..9}; do
-		echo 0 >/sys/class/thermal/cooling_device${i}/cur_state
-	done
 
 	for d in ${wake_daemons[@]}; do
 		start_service $d
