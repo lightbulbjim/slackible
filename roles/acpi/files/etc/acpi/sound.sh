@@ -6,7 +6,7 @@ vol_change_percent=5
 
 case "$1" in
 	'button/mute') amixer -q set Master toggle;;
-	'button/volumedown') amixer set Master ${vol_change_percent}%-;;
-	'button/volumeup') amixer set Master ${vol_change_percent}%+;;
+	'button/volumedown') amixer -q set Master ${vol_change_percent}%-;;
+	'button/volumeup') amixer -q set Master ${vol_change_percent}%+;;
 	'button/f20') amixer -q set Capture toggle;;
 esac
