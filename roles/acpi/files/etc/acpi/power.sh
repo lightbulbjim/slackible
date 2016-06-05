@@ -78,10 +78,7 @@ function do_sleep {
 
 	freeze
 	ps auxf > /root/${mode}.ps.log
-	case $mode in
-		suspend) echo mem > /sys/power/state;;
-		hibernate) echo disk > /sys/power/state;;
-	esac
+	/usr/sbin/pm-${mode}
 	thaw
 }
 
