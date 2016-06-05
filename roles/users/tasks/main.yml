@@ -23,3 +23,6 @@
     - vim/colors/Tomorrow-Night-Bright.vim
     - vim/colors/Tomorrow-Night-Eighties.vim
     - vim/colors/Tomorrow-Night-Mod.vim
+ 
+- name: Configure default profile
+  copy: src=etc/profile dest=/etc/profile owner=root group=root mode=0644
