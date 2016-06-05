@@ -2,8 +2,6 @@
 # Managed by Ansible
 # Main ACPI script that takes an entry for all actions
 
-lid="/proc/acpi/button/lid/LID"
-
 # Daemons which don't like sleeping.
 # List in order they need to be killed (will be reversed on wake).
 cranky_daemons=( )
@@ -100,7 +98,7 @@ case "$1" in
 		shutdown -h now
 		;;
 	'button/lid')
-		if grep '^state:\s\+closed$' ${lid}/state >/dev/null; then
+		if [[ "$3" == 'close' ]]; then
 			if caffeinated; then
 				lock_screen
 			else
