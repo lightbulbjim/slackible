@@ -16,11 +16,5 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-event=button/(power|lid).*
-action=/etc/acpi/power_states.sh %e
-
-event=button/(mute|volume|f20).*
+event=button/(mute|volume|f20)
 action=/etc/acpi/sound.sh %e
-
-event=video.*
-action=/etc/acpi/display.sh %e

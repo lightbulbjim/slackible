@@ -5,21 +5,27 @@
     - /etc/acpi
     - /etc/acpi/events
 
-- name: Ensure default acpid handler does not exist
-  file: path=/etc/acpi/acpi_handler.sh state=absent
+- name: Ensure default acpid config does not exist
+  file: path=/etc/acpi/{{ item }} state=absent
+  with_items:
+    - events/default
+    - acpi_handler.sh
+
+- name: Ensure acpid event hooks are configured
+  copy: src=etc/acpi/events/{{ item }} dest=/etc/acpi/events/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - lid
+    - power
+    - video
+    - volume
 
 - name: Ensure acpid handler scripts are configured
   copy: src=etc/acpi/{{ item }} dest=/etc/acpi/{{ item }} owner=root group=root mode=0755
   with_items:
     - sound.sh
     - display.sh
-    - power_states.sh
+    - power.sh
     - battery_shutdown.sh
-
-- name: Ensure acpid hooks are configured
-  copy: src=etc/acpi/events/{{ item }} dest=/etc/acpi/events/{{ item }} owner=root group=root mode=0644
-  with_items:
-    - default
 
 - name: Ensure misc ACPI utilities are installed
   copy: src=usr/local/bin/{{ item }} dest=/usr/local/bin/{{ item }} owner=root group=root mode=0755
