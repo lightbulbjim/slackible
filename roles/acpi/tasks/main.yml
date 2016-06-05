@@ -5,10 +5,13 @@
     - /etc/acpi
     - /etc/acpi/events
 
+- name: Ensure default acpid handler does not exist
+  file: path=/etc/acpi/acpi_handler.sh state=absent
+
 - name: Ensure acpid handler scripts are configured
   copy: src=etc/acpi/{{ item }} dest=/etc/acpi/{{ item }} owner=root group=root mode=0755
   with_items:
-    - acpi_handler.sh
+    - power_states.sh
     - battery_shutdown.sh
 
 - name: Ensure acpid hooks are configured
