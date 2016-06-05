@@ -5,7 +5,7 @@ enabled_services:
   - alsa
   - consolekit
   - cups
-  - dovecot
+  - cpufreq
   - firewall
   - font
   - inet1
@@ -15,7 +15,6 @@ enabled_services:
   - messagebus
   - modules
   - ntpd
-  - postgresql
   - syslog
   - sysvinit
   - udev
@@ -30,16 +29,21 @@ disabled_services:
   - bind
   - bluetooth
   - cgconfig
+  - cgmanager
+  - cgproxy
   - cgred
   - dnsmasq
   - fuse
   - gpm-sample
   - httpd
   - ip_forward
+  - lxc
   - mysqld
+  - networkmanager
   - nfsd
   - pcmcia
   - php-fpm
+  - pulseaudio
   - rpc
   - samba
   - saslauthd

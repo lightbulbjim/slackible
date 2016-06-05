@@ -1,9 +1,10 @@
 ---
-- name: Ensure rc.local is configured
+- name: "Ensure *.local services are configured"
   copy: src=rc.{{ item }} dest=/etc/rc.d/rc.{{ item }} owner=root group=root mode=0755
   with_items:
     - local
     - local_shutdown
+    - modules.local
 
 - name: Ensure enabled services are enabled
   file: path=/etc/rc.d/rc.{{ item }} owner=root group=root mode=0755 follow=yes state=file
