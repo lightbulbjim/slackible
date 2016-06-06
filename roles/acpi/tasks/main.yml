@@ -11,14 +11,6 @@
     - events/default
     - acpi_handler.sh
 
-- name: Remove old config
-  file: path=/etc/acpi/{{ item }} state=absent
-  with_items:
-    - events/video
-    - events/volume
-    - sound.sh
-    - display.sh
-
 - name: Ensure acpid event hooks are configured
   copy: src=etc/acpi/events/{{ item }} dest=/etc/acpi/events/{{ item }} owner=root group=root mode=0644
   with_items:
