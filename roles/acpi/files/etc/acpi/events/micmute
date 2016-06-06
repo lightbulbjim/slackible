@@ -1,8 +1,4 @@
 # Managed by Ansible
-#
-# This is the ACPID default configuration, it takes all
-# events and passes them to /etc/acpi/default.sh for further
-# processing.
 
 # event keeps a regular expression matching the event. To get
 # power events only, just use something like "event=button power.*"
@@ -16,5 +12,5 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-event=video/.*
-action=/etc/acpi/display.sh %e
+event=button/f20
+action=amixer -q sset Capture toggle

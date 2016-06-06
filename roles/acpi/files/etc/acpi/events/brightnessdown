@@ -12,5 +12,5 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-event=button/lid
-action=/etc/acpi/power.sh %e
+event=video/brightnessdown
+action=xbacklight -time 100 -dec 5
