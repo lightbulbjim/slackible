@@ -20,3 +20,5 @@
 #
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
+
+kernel-firmware

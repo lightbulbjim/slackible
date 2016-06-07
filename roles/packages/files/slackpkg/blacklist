@@ -16,7 +16,6 @@
 # run "lilo" after upgrade). If you think the same, uncomment the lines
 # below 
 #
-kernel-firmware
 kernel-generic
 kernel-generic-smp
 kernel-headers
