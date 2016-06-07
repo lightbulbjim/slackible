@@ -12,5 +12,5 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-event=button/volumedown
-action=amixer -q sset -M Master 5%%- unmute
+#event=button/volumedown
+#action=amixer -q sset -M Master 5%%- unmute

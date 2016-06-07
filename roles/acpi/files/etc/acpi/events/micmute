@@ -12,5 +12,5 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-event=button/f20
-action=amixer -q sset Capture toggle
+#event=button/f20
+#action=amixer -q sset Capture toggle
