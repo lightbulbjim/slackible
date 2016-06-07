@@ -49,7 +49,7 @@
 #----------------------------------------------------------------
 # USE MIRRORS.SLACKWARE.COM (FINDS A NEARBY MIRROR)
 # ftp://mirrors.slackware.com:/slackware/slackware64-14.1/
-http://mirrors.slackware.com/slackware/slackware64-14.1/
+#http://mirrors.slackware.com/slackware/slackware64-14.1/
 # AUSTRALIA (AU)
 # ftp://ftp.cc.swin.edu.au/slackware/slackware64-14.1/
 # http://ftp.cc.swin.edu.au/slackware/slackware64-14.1/
@@ -240,7 +240,7 @@ http://mirrors.slackware.com/slackware/slackware64-14.1/
 #----------------------------------------------------------------
 # USE MIRRORS.SLACKWARE.COM (FINDS A NEARBY MIRROR)
 # ftp://mirrors.slackware.com:/slackware/slackware64-current/
-# http://mirrors.slackware.com/slackware/slackware64-current/
+http://mirrors.slackware.com/slackware/slackware64-current/
 # AUSTRALIA (AU)
 # ftp://ftp.cc.swin.edu.au/slackware/slackware64-current/
 # http://ftp.cc.swin.edu.au/slackware/slackware64-current/
