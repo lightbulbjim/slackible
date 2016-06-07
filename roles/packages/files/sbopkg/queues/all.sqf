@@ -23,6 +23,7 @@ hack-font-ttf
 # Apps
 abcde
 bibletime
+cmus
 ctorrent
 dosbox
 easytag
