@@ -26,6 +26,7 @@ bibletime
 cmus
 ctorrent
 dosbox
+eagle
 easytag
 exfat-utils
 google-go-lang
@@ -42,6 +43,7 @@ rust
 sigil
 skype
 tagtool
+TLP
 unrar
 wesnoth
 wmname
