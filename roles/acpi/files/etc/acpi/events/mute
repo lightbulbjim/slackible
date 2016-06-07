@@ -12,5 +12,5 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-#event=button/mute
-#action=amixer -q sset Master toggle
+event=button/mute
+action=pactl set-sink-mute @DEFAULT_SINK@ toggle

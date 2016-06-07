@@ -12,5 +12,5 @@
 # through the whole kernel event message to the program you've
 # specified.
 
-#event=button/volumeup
-#action=amixer -q sset -M Master 5%%+ unmute
+event=button/volumeup
+action=sh -c 'pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ +5%%'
