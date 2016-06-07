@@ -13,4 +13,4 @@
 # specified.
 
 event=video/brightnessdown
-action=xbacklight -time 100 -dec 5
+action=xbacklight -time 100 -dec 2.5
