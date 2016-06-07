@@ -18,9 +18,9 @@
     - brightnessup
     - lid
     - micmute
+    - mute
     - power
     - volumedown
-    - volumemute
     - volumeup
 
 - name: Ensure acpid handler scripts are configured
