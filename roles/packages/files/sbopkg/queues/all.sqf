@@ -8,7 +8,6 @@ id3lib
 imlib2
 json-c
 lame
-pysetuptools
 qt5
 scons
 SDL_sound
@@ -19,35 +18,28 @@ sword
 # Fonts
 culmus
 GentiumPlus
-ttf-bitstream-vera
+hack-font-ttf
 
 # Apps
 abcde
-apulse
 bibletime
 ctorrent
 dosbox
 easytag
 exfat-utils
-dovecot
 google-go-lang
 ffmpeg | LAME=yes
 graveman
 gst-ffmpeg
 hsetroot
-isync
 ledger
-libdvdcss
 lua
 newsbeuter
 p7zip
-pip
-postgresql
 python3
 rust
 sigil
 skype
-sylpheed
 tagtool
 unrar
 wesnoth
