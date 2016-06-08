@@ -40,6 +40,7 @@ newsbeuter
 p7zip
 python3
 rust
+rxvt-unicode
 sigil
 skype
 tagtool
