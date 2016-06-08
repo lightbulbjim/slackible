@@ -6,12 +6,9 @@ cd-discid
 fuse-exfat
 id3lib
 imlib2
-json-c
 lame
-qt5
-scons
+qt5 | USEPULSE=yes
 SDL_sound
-speex
 stfl
 sword
 
