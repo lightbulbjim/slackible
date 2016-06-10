@@ -13,4 +13,4 @@
 # specified.
 
 event=video/brightnessup
-action=xbacklight -time 100 -inc 2.5
+action=/etc/acpi/backlight.sh up
