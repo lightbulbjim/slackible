@@ -2,7 +2,6 @@
 
 enabled_services:
   - acpid
-  - alsa
   - consolekit
   - cups
   - cpufreq
@@ -23,6 +22,7 @@ enabled_services:
   - wireless
 
 disabled_services:
+  - alsa
   - alsa-oss
   - atalk
   - autofs

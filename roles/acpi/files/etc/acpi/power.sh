@@ -66,7 +66,6 @@ function freeze {
 	done
 
 	/sbin/umount -l /mnt/sd
-	/usr/sbin/alsactl store
 	/sbin/hwclock --systohc
 }
 
@@ -87,7 +86,6 @@ function do_sleep {
 function thaw {
 	caffeinate 0 >/dev/null 2>&1
 	/sbin/hwclock --hctosys
-	/usr/sbin/alsactl restore
 
 	for d in ${wake_daemons[@]}; do
 		start_service $d
