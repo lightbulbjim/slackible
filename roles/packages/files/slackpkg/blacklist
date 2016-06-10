@@ -16,6 +16,7 @@
 # run "lilo" after upgrade). If you think the same, uncomment the lines
 # below 
 #
+#kernel-firmware
 kernel-generic
 kernel-generic-smp
 kernel-headers
@@ -26,9 +27,8 @@ kernel-modules-smp
 kernel-source
 
 #
-# aaa_elflibs can't be updated.
+# aaa_elflibs should NOT be blacklisted!
 #
-aaa_elflibs
 
 # You can blacklist using regular expressions.
 #
