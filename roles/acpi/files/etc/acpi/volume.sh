@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # Managed by Ansible
 # Volume control helper script
 
