@@ -1,0 +1,28 @@
+# ACPI helper functions
+# Managed by Ansible
+
+# Be verbose
+function verbose {
+	[[ "$verbose" -eq 1 ]] && echo "$@"
+}
+
+# Run things as the current X user.
+function runasXuser {
+	local Xcmd="/usr/libexec/Xorg"
+
+	Xtty=$(</sys/class/tty/tty0/active)
+	Xpid=$(pgrep -t $Xtty -f $Xcmd)
+		
+	Xenv+=("$(egrep -aoz 'USER=.+' /proc/$Xpid/environ)")
+	Xenv+=("$(egrep -aoz 'XAUTHORITY=.+' /proc/$Xpid/environ)")
+	Xenv+=("$(egrep -aoz ':[0-9](.[0-9])?' /proc/$Xpid/cmdline)")
+		
+	Xenv=(${Xenv[@]#*=})    
+		
+	(( ${#Xenv[@]} )) && {      
+		export XUSER=${Xenv[0]} XAUTHORITY=${Xenv[1]} DISPLAY=${Xenv[2]}
+		su -c "$*" "$XUSER"                     
+	}                                               
+}   
+
+verbose=0

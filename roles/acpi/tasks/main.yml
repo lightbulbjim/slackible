@@ -18,13 +18,16 @@
     - brightnessup
     - lid
     - power
+    - presentation
 
 - name: Ensure acpid handler scripts are configured
   copy: src=etc/acpi/{{ item }} dest=/etc/acpi/{{ item }} owner=root group=root mode=0755
   with_items:
+    - functions
     - backlight.sh
     - battery_shutdown.sh
     - power.sh
+    - presentation.sh
     - volume.sh
 
 - name: Ensure misc ACPI utilities are installed
