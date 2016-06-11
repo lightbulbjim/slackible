@@ -12,7 +12,7 @@ source $(dirname $0)/functions
 
 [[ "$1" == "-v" ]] && verbose=1
 
-xrandr | grep '^\S' | tail -n+2 | awk '{print $1, $2}'| while read output; do
+runasXuser xrandr | grep '^\S' | tail -n+2 | awk '{print $1, $2}' | while read output; do
 	name="${output% *}"
 	state="${output#* }"
 
