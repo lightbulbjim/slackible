@@ -1,3 +1,0 @@
-# Managed by Ansible
-
-SUBSYSTEM=="drm", ACTION=="change", RUN+="/etc/acpi/presentation.sh"
