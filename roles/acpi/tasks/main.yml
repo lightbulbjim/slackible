@@ -34,3 +34,8 @@
   copy: src=usr/local/bin/{{ item }} dest=/usr/local/bin/{{ item }} owner=root group=root mode=0755
   with_items:
     - caffeinate
+
+- name: Ensure related udev rules are configured
+  copy: src=etc/udev/rules.d/{{ item }} dest=/etc/udev/rules.d/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - "99-presentation.rules"
