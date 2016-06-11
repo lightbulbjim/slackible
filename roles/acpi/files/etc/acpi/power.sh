@@ -6,25 +6,7 @@
 # List in order they need to be killed (will be reversed on wake).
 cranky_daemons=( )
 
-
-# Run things as the current X user. Necessary for screen locker.
-function runasXuser {
-	local Xcmd="/usr/libexec/Xorg"
-
-	Xtty=$(</sys/class/tty/tty0/active)
-	Xpid=$(pgrep -t $Xtty -f $Xcmd)
-		
-	Xenv+=("$(egrep -aoz 'USER=.+' /proc/$Xpid/environ)")
-	Xenv+=("$(egrep -aoz 'XAUTHORITY=.+' /proc/$Xpid/environ)")
-	Xenv+=("$(egrep -aoz ':[0-9](.[0-9])?' /proc/$Xpid/cmdline)")
-		
-	Xenv=(${Xenv[@]#*=})    
-		
-	(( ${#Xenv[@]} )) && {      
-		export XUSER=${Xenv[0]} XAUTHORITY=${Xenv[1]} DISPLAY=${Xenv[2]}
-		su -c "$*" "$XUSER"                     
-	}                                               
-}   
+source $(dirname $0)/functions
 
 
 function lock_screen {
