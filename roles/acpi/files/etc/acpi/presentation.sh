@@ -12,6 +12,7 @@ source $(dirname $0)/functions
 
 [[ "$1" == "-v" ]] && verbose=1
 
+# Send video to any connected ports
 runasXuser xrandr | grep '^\S' | tail -n+2 | awk '{print $1, $2}' | while read output; do
 	name="${output% *}"
 	state="${output#* }"
@@ -29,3 +30,12 @@ runasXuser xrandr | grep '^\S' | tail -n+2 | awk '{print $1, $2}' | while read o
 			;;
 	esac
 done
+
+# Send audio to HDMI if it's connected
+if runasXuser xrandr --listmonitors | grep HDMI >/dev/null 2>&1; then
+	sound_output="hdmi-stereo"
+else
+	sound_output="analog_stereo"
+fi
+
+runasXuser pactl set-card-profile 0 output:${sound_output}
