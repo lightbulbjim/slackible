@@ -5,6 +5,9 @@
 # Options are above, below, left-of, right-of, same-as (mirror)
 placement=above
 
+# Screen blank timeout (for when no external screens are connected)
+dpms_timeout=600
+
 # Builtin display name
 builtin_display="eDP1"
 
@@ -13,6 +16,7 @@ source $(dirname $0)/functions
 [[ "$1" == "-v" ]] && verbose=1
 
 # Send video to any connected ports
+connected_monitors=0
 runasXuser xrandr | grep '^\S' | tail -n+2 | awk '{print $1, $2}' | while read output; do
 	name="${output% *}"
 	state="${output#* }"
@@ -24,12 +28,20 @@ runasXuser xrandr | grep '^\S' | tail -n+2 | awk '{print $1, $2}' | while read o
 	case $state in
 		connected)
 			runasXuser xrandr --output $name --auto --${placement} $builtin_display
+			((connected_monitors++))
 			;;
 		disconnected)
 			runasXuser xrandr --output $name --off
 			;;
 	esac
 done
+
+# Disable screen blanking if any external displays are connected
+if [[ $connected_monitors -gt 0 ]]; then
+	runasXuser xset dpms 0 0 0
+else
+	runasXuser xset dpms 0 0 $dpms_timeout
+fi
 
 # Send audio to HDMI if it's connected
 if runasXuser xrandr --listmonitors | grep HDMI >/dev/null 2>&1; then
