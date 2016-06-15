@@ -33,13 +33,6 @@ runasXuser xrandr | grep '^\S' | tail -n+2 | awk '{print $1, $2}' | while read o
 	esac
 done
 
-# Disable screen blanking if any external displays are connected
-if [[ $connected_monitors -gt 0 ]]; then
-	runasXuser xset dpms 0 0 0
-else
-	runasXuser xset dpms 0 0 $dpms_timeout
-fi
-
 # Send audio to HDMI if it's connected
 if runasXuser xrandr --listmonitors | grep HDMI >/dev/null 2>&1; then
 	sound_output="hdmi-stereo"
