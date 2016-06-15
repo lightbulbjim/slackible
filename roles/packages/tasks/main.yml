@@ -34,7 +34,7 @@
 
 - name: Ensure system Ruby gems are installed
   gem: name={{ item }} user_install=no state=present
-  with_items: gems
+  with_items: "{{ gems }}"
   when: network_available
 
 - name: Ensure system PIP requirements file is present
