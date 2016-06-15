@@ -37,7 +37,7 @@ done
 if runasXuser xrandr --listmonitors | grep HDMI >/dev/null 2>&1; then
 	sound_output="hdmi-stereo"
 else
-	sound_output="analog_stereo"
+	sound_output="analog-stereo"
 fi
 
 runasXuser pactl set-card-profile 0 output:${sound_output}
