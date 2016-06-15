@@ -1,0 +1,6 @@
+---
+
+fstrim_filesystems:
+  - /
+
+fstrim_log: "/var/log/fstrim.log"

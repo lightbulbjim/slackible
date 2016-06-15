@@ -6,6 +6,7 @@
     - time
     - users
     - cron
+    - disk
     - packages
     - network
     - acpi

@@ -1,0 +1,9 @@
+#!/bin/sh
+# Managed by Ansible
+
+log="{{ fstrim_log }}"
+
+echo "*** $(date -R) ***" >> $log
+{% for filesystem in fstrim_filesystems %}
+fstrim -v {{ filesystem }} >> $log
+{% endfor %}

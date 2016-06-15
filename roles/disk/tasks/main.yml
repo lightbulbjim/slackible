@@ -1,0 +1,7 @@
+---
+
+- name: Ensure weekly fstrim cron job is configured
+  template: src=cron/fstrim.j2 dest=/etc/cron.weekly/fstrim owner=root group=root mode=0755
+
+- name: Ensure weekly fstrim logrotate is configured
+  template: src=logrotate/fstrim.j2 dest=/etc/logrotate.d/fstrim owner=root group=root mode=0644
