@@ -3,12 +3,15 @@
 
 # Dependencies
 cd-discid
+ffmpeg | LAME=yes PULSEAUDIO=yes
 fuse-exfat
+gsl
 id3lib
 imlib2
 lame
 qt5 | USEPULSE=yes
 SDL_sound
+SDL2
 stfl
 sword
 
@@ -27,7 +30,7 @@ eagle
 easytag
 exfat-utils
 google-go-lang
-ffmpeg | LAME=yes
+guvcview | PULSE=yes
 graveman
 gst-ffmpeg
 hsetroot
