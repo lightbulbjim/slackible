@@ -9,6 +9,7 @@ gsl
 id3lib
 imlib2
 lame
+portaudio
 qt5 | USEPULSE=yes
 SDL_sound
 SDL2
