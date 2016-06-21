@@ -8,7 +8,7 @@ id3lib
 imlib2
 lame
 muParser
-qt5 | USEPULSE=yes
+qt5
 SDL_sound
 stfl
 sword
