@@ -7,6 +7,7 @@ fuse-exfat
 id3lib
 imlib2
 lame
+muParser
 qt5 | USEPULSE=yes
 SDL_sound
 stfl
@@ -32,6 +33,7 @@ graveman
 gst-ffmpeg
 hsetroot
 ledger
+librecad
 lua
 newsbeuter
 p7zip
