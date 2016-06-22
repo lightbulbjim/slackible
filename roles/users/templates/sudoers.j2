@@ -33,6 +33,3 @@ root	ALL=(ALL) ALL
 # Samples
 # %users  ALL=/sbin/mount /cdrom,/sbin/umount /cdrom
 # %users  localhost=/sbin/shutdown -h now
-
-%users  {{ ansible_hostname }}=NOPASSWD: /etc/rc.d/rc.inet1
-%users  {{ ansible_hostname }}=NOPASSWD: /etc/acpi/suspend.sh
