@@ -31,7 +31,6 @@ easytag
 exfat-utils
 google-go-lang
 graveman
-gst-ffmpeg
 hsetroot
 ledger
 librecad
