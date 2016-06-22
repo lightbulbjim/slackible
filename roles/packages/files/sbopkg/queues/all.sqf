@@ -12,7 +12,7 @@ qt5
 SDL_sound
 stfl
 sword
-ffmpeg | LAME=yes PULSEAUDIO=yes
+ffmpeg | LAME=yes
 
 # Fonts
 culmus
