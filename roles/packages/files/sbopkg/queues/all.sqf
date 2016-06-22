@@ -7,6 +7,7 @@ fuse-exfat
 id3lib
 imlib2
 lame
+libwebp
 muParser
 qt5
 SDL_sound
