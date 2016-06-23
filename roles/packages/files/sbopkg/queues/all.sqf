@@ -23,6 +23,7 @@ hack-font-ttf
 
 # Apps
 abcde
+axel
 bibletime
 cmus
 ctorrent
