@@ -2,7 +2,7 @@
 # Managed by Ansible
 # Backlight control helper script
 
-step_fraction=30
+step_fraction=50
 backlight="/sys/class/backlight/intel_backlight"
 
 cur=$(cat ${backlight}/brightness)
