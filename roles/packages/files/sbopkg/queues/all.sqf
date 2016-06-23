@@ -10,6 +10,7 @@ lame
 libwebp
 muParser
 qt5
+qt5-webkit
 SDL_sound
 stfl
 sword
