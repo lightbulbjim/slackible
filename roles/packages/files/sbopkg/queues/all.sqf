@@ -8,6 +8,7 @@ id3lib
 imlib2
 lame
 libwebp
+libxkbcommon
 muParser
 qt5
 qt5-webkit
