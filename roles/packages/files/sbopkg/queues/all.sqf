@@ -32,6 +32,7 @@ dosbox
 eagle
 easytag
 exfat-utils
+freeciv
 google-go-lang
 graveman
 hsetroot
@@ -39,6 +40,7 @@ ledger
 librecad
 lua
 newsbeuter
+openttd
 p7zip
 python3
 rust
