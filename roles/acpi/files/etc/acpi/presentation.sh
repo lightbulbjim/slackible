@@ -40,4 +40,4 @@ else
 	sound_output="analog-stereo"
 fi
 
-runasXuser pactl set-card-profile 0 output:${sound_output}
+runasXuser pactl set-card-profile 0 output:${sound_output}+input:analog-stereo
