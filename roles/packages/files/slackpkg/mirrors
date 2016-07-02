@@ -51,7 +51,7 @@
 # Slackware64-14.2
 #----------------------------------------------------------------
 # USE MIRRORS.SLACKWARE.COM (DO NOT USE FTP - ONLY HTTP FINDS A NEARBY MIRROR)
-# http://mirrors.slackware.com/slackware/slackware64-14.2/
+http://mirrors.slackware.com/slackware/slackware64-14.2/
 #
 # AUSTRALIA (AU)
 # ftp://ftp.cc.swin.edu.au/slackware/slackware64-14.2/
@@ -242,7 +242,7 @@
 # Slackware64-current
 #----------------------------------------------------------------
 # USE MIRRORS.SLACKWARE.COM (DO NOT USE FTP - ONLY HTTP FINDS A NEARBY MIRROR)
-http://mirrors.slackware.com/slackware/slackware64-current/
+# http://mirrors.slackware.com/slackware/slackware64-current/
 #
 # AUSTRALIA (AU)
 # ftp://ftp.cc.swin.edu.au/slackware/slackware64-current/
