@@ -36,6 +36,7 @@ freeciv
 google-go-lang
 graveman
 hsetroot
+ifuse
 ledger
 librecad
 lua
