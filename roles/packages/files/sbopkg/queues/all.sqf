@@ -10,12 +10,14 @@ lame
 libwebp
 libxkbcommon
 muParser
+pwgen
 qt5
 qt5-webkit
 SDL_sound
 stfl
 sword
 ffmpeg | LAME=yes
+xclip
 
 # Fonts
 culmus
@@ -42,6 +44,7 @@ librecad
 lua
 newsbeuter
 openttd
+password-store
 p7zip
 python3
 rust
