@@ -41,3 +41,6 @@ kernel-source
 
 kde
 kdei
+
+# Running a custom version of XBoard
+gnuchess
