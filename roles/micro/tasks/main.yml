@@ -1,0 +1,14 @@
+---
+
+- name: Ensure platformio udev rules are in place
+  copy: src=udev/{{ item }} dest=/etc/udev/rules.d/{{ item }} owner=root
+      group=root mode=0644
+  with_items:
+    - "99-platformio-udev.rules"
+
+- name: Ensure libtinfo exists
+  file: src=/usr/{{ item }}/libncurses.so.5 dest=/usr/{{ item }}/libtinfo.so.5
+      state=link
+  with_items:
+    - lib
+    - lib64
