@@ -1,6 +1,6 @@
 ---
-- name: Ensure USB autosuspend blacklist is configured
-  lineinfile: dest=/etc/default/tlp regexp='^#USB_BLACKLIST=' line='USB_BLACKLIST="04a9:2220"' state=present
+- name: Prevent scanner from USB-suspending.
+  lineinfile: dest=/etc/default/tlp regexp='^USB_BLACKLIST=' line='USB_BLACKLIST="04a9:2220"' state=present
 
 - name: Ensure acpid configuration directories exist
   file: path={{ item }} owner=root group=root mode=0755 state=directory
