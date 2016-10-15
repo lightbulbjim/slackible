@@ -1,7 +1,7 @@
 # Managed by Ansible
 # Queue of all packages
 
-# Dependencies
+# General Dependencies
 cd-discid
 fuse-exfat
 id3lib
@@ -18,6 +18,14 @@ stfl
 sword
 ffmpeg | LAME=yes
 xclip
+
+# KiCAD Dependencies
+wxGTK3
+wxPython3
+libgnomecups
+libgnomeprint
+libgnomecanvas
+libgnomeprintui
 
 # Fonts
 culmus
@@ -39,6 +47,9 @@ google-go-lang
 graveman
 hsetroot
 ifuse
+kicad
+kicad-doc
+kicad-library
 ledger
 librecad
 lua
