@@ -7,6 +7,7 @@ fuse-exfat
 id3lib
 imlib2
 lame
+libmp4v2
 libwebp
 libxkbcommon
 muParser
