@@ -3,14 +3,18 @@
 
 # General Dependencies
 cd-discid
+faad2
 fuse-exfat
 id3lib
 imlib2
 lame
+libcue
 libmp4v2
 libwebp
 libxkbcommon
 muParser
+opus
+opusfile
 pwgen
 qt5
 qt5-webkit
