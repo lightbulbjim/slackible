@@ -7,6 +7,7 @@ faad2
 fuse-exfat
 id3lib
 imlib2
+jq
 lame
 libcue
 libmp4v2
