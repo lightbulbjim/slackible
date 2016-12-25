@@ -13,6 +13,7 @@ libcue
 libmp4v2
 libwebp
 libxkbcommon
+lua
 muParser
 opus
 opusfile
@@ -24,6 +25,10 @@ stfl
 sword
 ffmpeg | LAME=yes
 xclip
+
+# Celestia Dependencies
+pangox-compat
+gtkglext
 
 # KiCAD Dependencies
 wxGTK3
@@ -42,6 +47,7 @@ hack-font-ttf
 abcde
 axel
 bibletime
+celestia
 cmus
 ctorrent
 dosbox
@@ -58,7 +64,6 @@ kicad-doc
 kicad-library
 ledger
 librecad
-lua
 newsbeuter
 openttd
 password-store
