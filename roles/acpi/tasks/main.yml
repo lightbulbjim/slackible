@@ -1,7 +1,4 @@
 ---
-- name: Prevent scanner from USB-suspending.
-  lineinfile: dest=/etc/default/tlp regexp='^USB_BLACKLIST=' line='USB_BLACKLIST="04a9:2220"' state=present
-
 - name: Ensure acpid configuration directories exist
   file: path={{ item }} owner=root group=root mode=0755 state=directory
   with_items:
@@ -37,3 +34,6 @@
   copy: src=usr/local/bin/{{ item }} dest=/usr/local/bin/{{ item }} owner=root group=root mode=0755
   with_items:
     - caffeinate
+
+- name: Ensure TLP is configured
+  copy: src=etc/default/tlp dest=/etc/default/tlp owner=root group=root mode=0644
