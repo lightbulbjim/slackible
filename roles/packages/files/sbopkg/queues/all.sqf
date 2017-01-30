@@ -18,6 +18,7 @@ muParser
 opus
 opusfile
 pwgen
+pyxdg
 qt5
 qt5-webkit
 SDL_sound
@@ -69,6 +70,7 @@ openttd
 password-store
 p7zip
 python3
+redshift
 rust
 rxvt-unicode
 sigil
