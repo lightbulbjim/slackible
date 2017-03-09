@@ -49,6 +49,7 @@ abcde
 axel
 bibletime
 celestia
+chessx
 cmus
 ctorrent
 dosbox
@@ -79,4 +80,5 @@ tagtool
 TLP
 unrar
 wesnoth
+wine
 wmname
