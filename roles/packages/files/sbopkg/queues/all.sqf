@@ -39,6 +39,12 @@ libgnomeprint
 libgnomecanvas
 libgnomeprintui
 
+# Scid Dependencies
+tcllib
+tDOM
+tkimg
+snack
+
 # Fonts
 culmus
 GentiumPlus
@@ -49,7 +55,6 @@ abcde
 axel
 bibletime
 celestia
-chessx
 cmus
 ctorrent
 dosbox
@@ -74,8 +79,10 @@ python3
 redshift
 rust
 rxvt-unicode
+scid
 sigil
 skype
+stockfish
 tagtool
 TLP
 unrar
