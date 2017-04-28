@@ -64,7 +64,7 @@ exfat-utils
 freeciv
 google-go-lang
 graveman
-hsetroot
+mhsetroot
 ifuse
 kicad
 kicad-doc
