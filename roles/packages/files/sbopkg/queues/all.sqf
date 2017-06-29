@@ -81,7 +81,7 @@ rust
 rxvt-unicode
 scid
 sigil
-skype
+skypeforlinux
 stockfish
 tagtool
 TLP
