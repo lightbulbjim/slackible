@@ -10,6 +10,7 @@ imlib2
 jq
 lame
 libcue
+libminizip
 libmp4v2
 libwebp
 libxkbcommon
@@ -63,6 +64,7 @@ easytag
 exfat-utils
 freeciv
 google-go-lang
+gpsbabel
 graveman
 mhsetroot
 ifuse
