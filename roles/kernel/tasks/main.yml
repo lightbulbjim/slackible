@@ -1,0 +1,3 @@
+---
+- name: Ensure kernel install script is in place
+  copy: src=boot/installkernel.sh dest=/boot/installkernel.sh owner=root group=root mode=0755

@@ -12,4 +12,5 @@
     - acpi
     - x11
     - services
+    - kernel
     - micro
