@@ -82,6 +82,7 @@ redshift
 rust
 rxvt-unicode
 scid
+shntool
 sigil
 skypeforlinux
 stockfish
