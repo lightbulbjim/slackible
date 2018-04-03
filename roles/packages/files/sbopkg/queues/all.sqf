@@ -51,6 +51,11 @@ culmus
 GentiumPlus
 hack-font-ttf
 
+# LibreOffice (binary, no deps)
+libreoffice
+libreoffice-helppack
+libreoffice-langpack
+
 # Apps
 abcde
 axel

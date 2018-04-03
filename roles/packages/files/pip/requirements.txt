@@ -1,5 +1,6 @@
 # Managed by Ansible
 
+pylint
 virtualenv
 virtualenv-clone
 virtualenvwrapper
