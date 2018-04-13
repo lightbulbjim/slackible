@@ -40,3 +40,7 @@
 - name: Ensure system PIP requirements file is present
   copy: src=pip/requirements.txt dest=/etc/requirements.txt
       owner=root group=root mode=0644
+
+- name: Ensure symlinks for annoying binaries exist
+  file: src={{ item.target }} dest={{ item.link }} state=link
+  with_items: "{{ symlinks }}"

@@ -83,4 +83,4 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="0451", ATTRS{idProduct}=="f432", MODE="0666
 ATTRS{product}=="*CMSIS-DAP*", MODE="664", GROUP="plugdev"
 
 #SparkFun Pro Micro (clone)
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="1b4f", ATTRS{idProduct}=="9205", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1b4f", ATTRS{idProduct}=="920[35]", MODE="0666"

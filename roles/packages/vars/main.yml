@@ -1,3 +1,6 @@
 ---
 gems:
   - tugboat
+
+symlinks:
+  - { link: '/usr/bin/freecad', target: '/usr/bin/FreeCAD' }
