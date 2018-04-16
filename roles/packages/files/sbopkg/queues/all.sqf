@@ -56,6 +56,11 @@ libreoffice
 libreoffice-helppack
 libreoffice-langpack
 
+# OpenSCAD
+CGAL
+OpenCSG
+openscad
+
 # Apps
 abcde
 axel

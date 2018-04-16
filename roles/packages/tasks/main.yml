@@ -30,6 +30,7 @@
   copy: src=sbopkg/queues/{{ item }} dest=/var/lib/sbopkg/queues/{{ item }}
       owner=root group=root mode=0644
   with_items:
+    - FreeCAD.sqf
     - all.sqf
 
 - name: Ensure system Ruby gems are installed
