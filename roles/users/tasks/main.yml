@@ -1,6 +1,6 @@
 ---
 - name: Ensure users exist
-  user: name={{ item }} group=users groups=wheel,games,netdev remove=no
+  user: name={{ item }} group=users groups=wheel,games,netdev,plugdev remove=no
       password={{ password_hash }} update_password=on_create state=present
   with_items: "{{ users }}"
 
