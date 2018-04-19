@@ -51,11 +51,11 @@
 # Slackware64-14.2
 #----------------------------------------------------------------
 # USE MIRRORS.SLACKWARE.COM (DO NOT USE FTP - ONLY HTTP FINDS A NEARBY MIRROR)
-http://mirrors.slackware.com/slackware/slackware64-14.2/
+# http://mirrors.slackware.com/slackware/slackware64-14.2/
 #
 # AUSTRALIA (AU)
 # ftp://ftp.cc.swin.edu.au/slackware/slackware64-14.2/
-# http://ftp.cc.swin.edu.au/slackware/slackware64-14.2/
+http://ftp.cc.swin.edu.au/slackware/slackware64-14.2/
 # ftp://ftp.iinet.net.au/pub/slackware/slackware64-14.2/
 # http://ftp.iinet.net.au/pub/slackware/slackware64-14.2/
 # ftp://mirror.aarnet.edu.au/pub/slackware/slackware64-14.2/
