@@ -24,4 +24,5 @@ qt5
 VTK
 OpenCASCADE
 graphviz
+hdf5
 FreeCAD
