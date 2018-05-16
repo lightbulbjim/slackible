@@ -25,4 +25,5 @@ VTK
 OpenCASCADE
 graphviz
 hdf5
+med
 FreeCAD
