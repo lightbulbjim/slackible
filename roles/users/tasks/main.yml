@@ -18,11 +18,7 @@
   copy: src=root/{{ item }} dest=/root/.{{ item }} owner=root group=root mode=0644
   with_items:
     - vimrc
-    - vim/colors/Tomorrow-Night.vim
-    - vim/colors/Tomorrow-Night-Blue.vim
     - vim/colors/Tomorrow-Night-Bright.vim
-    - vim/colors/Tomorrow-Night-Eighties.vim
-    - vim/colors/Tomorrow-Night-Mod.vim
  
 - name: Configure default profile
   copy: src=etc/profile dest=/etc/profile owner=root group=root mode=0644
