@@ -1,9 +1,0 @@
-pyudev
-python-evdev
-graphviz
-ninja
-python3
-meson
-libwacom
-libinput
-xf86-input-libinput
