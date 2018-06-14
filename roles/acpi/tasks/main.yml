@@ -28,6 +28,7 @@
     - battery_shutdown.sh
     - power.sh
     - presentation.sh
+    - touchpad.sh
     - volume.sh
 
 - name: Ensure misc ACPI utilities are installed
