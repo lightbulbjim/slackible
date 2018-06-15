@@ -49,5 +49,5 @@
       owner=root group=root mode=0644
 
 - name: Ensure symlinks for annoying binaries exist
-  file: src={{ item.target }} dest={{ item.link }} state=link
+  file: src={{ item.target }} dest={{ item.link }} state=link force=yes
   with_items: "{{ symlinks }}"

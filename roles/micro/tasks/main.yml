@@ -8,7 +8,7 @@
 
 - name: Ensure libtinfo exists
   file: src=/usr/{{ item }}/libncurses.so.5 dest=/usr/{{ item }}/libtinfo.so.5
-      state=link
+      state=link force=yes
   with_items:
     - lib
     - lib64
