@@ -12,6 +12,10 @@ openttd
 
 # Scid
 stockfish
+tcllib
+tDOM
+tkimg
+snack
 scid
 
 # DosBox
