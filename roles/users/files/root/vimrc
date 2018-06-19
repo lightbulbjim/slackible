@@ -1,7 +1,7 @@
 " Managed by Ansible
 
 set nocompatible
-colorscheme Tomorrow-Night-Mod
+colorscheme Tomorrow-Night-Bright
 syntax on
 set ruler
 set linebreak
