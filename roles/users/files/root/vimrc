@@ -3,10 +3,13 @@
 set nocompatible
 colorscheme Tomorrow-Night-Bright
 syntax on
+let mapleader = "\<Space>"
 set ruler
 set linebreak
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set expandtab
 set nobackup
 set nowritebackup
 set noundofile
@@ -17,5 +20,11 @@ set hlsearch
 set backspace=indent,eol,start
 imap <F3> <C-R>=strftime("%Y/%m/%d")<CR>
 inoremap <S-Tab> <C-V><Tab>
+inoremap <S-Tab> <C-V><Tab>
+nnoremap <leader>b :Gblame<CR>
+nnoremap <leader>e :Explore<CR>
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>p :bp<CR>
+nnoremap <leader>f :GoFmt<CR>
 set spelllang=en_au
 filetype plugin indent on
