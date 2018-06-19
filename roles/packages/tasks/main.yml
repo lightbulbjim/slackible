@@ -37,6 +37,7 @@
     - maps.sqf
     - music.sqf
     - office.sqf
+    - work.sqf
     - zzz_experimental.sqf
 
 - name: Ensure system Ruby gems are installed
