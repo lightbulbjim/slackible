@@ -1,6 +1,6 @@
 ---
 - name: Ensure firewall init script exists
-  copy: src=rc.firewall dest=/etc/rc.d/rc.firewall
+  copy: src=etc/rc.d/rc.firewall dest=/etc/rc.d/rc.firewall
 
 - name: Ensure IPTables config file is in place
-  copy: src=iptables.conf dest=/etc/iptables.conf owner=root group=root mode=0644
+  copy: src=etc/iptables.conf dest=/etc/iptables.conf owner=root group=root mode=0644
