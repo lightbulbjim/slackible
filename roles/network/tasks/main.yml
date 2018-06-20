@@ -4,3 +4,8 @@
 
 - name: Ensure IPTables config file is in place
   copy: src=etc/iptables.conf dest=/etc/iptables.conf owner=root group=root mode=0644
+
+- name: Ensure sshd is configured
+  copy: src=etc/ssh/{{ item }} dest=/etc/ssh/{{ item }} owner=root group=root mode=0644
+  with_items:
+    - sshd_config
