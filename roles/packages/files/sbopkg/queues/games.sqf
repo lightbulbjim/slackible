@@ -21,3 +21,9 @@ scid
 # DosBox
 SDL_sound
 dosbox
+
+# DCSS
+SDL2
+SDL2_image
+lua
+stone_soup

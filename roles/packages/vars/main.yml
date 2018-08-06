@@ -2,5 +2,10 @@
 gems:
   - tugboat
 
-symlinks:
+game_symlinks:
+  - { link: '/usr/local/bin/defcon', target: '/opt/defcon/defcon.bin.x86_64' }
+  - { link: '/usr/local/bin/qud',    target: '/opt/qud/start.sh' }
+  - { link: '/usr/local/bin/uplink', target: '/opt/uplink/uplink' }
+
+annoying_symlinks:
   - { link: '/usr/bin/freecad', target: '/usr/bin/FreeCAD' }

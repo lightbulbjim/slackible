@@ -47,8 +47,13 @@
 
 - name: Ensure system PIP requirements file is present
   copy: src=pip/requirements.txt dest=/etc/requirements.txt
+
+- name: Ensure symlinks for unpackaged games exist
+  file: src={{ item.target }} dest={{ item.link }} state=link force=yes
       owner=root group=root mode=0644
+  with_items: "{{ game_symlinks }}"
 
 - name: Ensure symlinks for annoying binaries exist
   file: src={{ item.target }} dest={{ item.link }} state=link force=yes
-  with_items: "{{ symlinks }}"
+      owner=root group=root mode=0644
+  with_items: "{{ annoying_symlinks }}"
