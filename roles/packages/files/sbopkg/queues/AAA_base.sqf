@@ -1,3 +1,5 @@
+# Managed by Ansible
+
 # ctorrent
 ctorrent
 

@@ -1,3 +1,5 @@
+# Managed by Ansible
+
 # bibletime
 culmus
 GentiumPlus

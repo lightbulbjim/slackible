@@ -1,3 +1,5 @@
+# Managed by Ansible
+
 # KiCAD
 wxGTK3
 wxPython3

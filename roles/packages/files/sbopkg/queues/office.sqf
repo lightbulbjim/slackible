@@ -1,3 +1,5 @@
+# Managed by Ansible
+
 # LibreOffice
 libreoffice
 libreoffice-helppack

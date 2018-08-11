@@ -1,3 +1,5 @@
+# Managed by Ansible
+
 # celestia
 lua
 pangox-compat

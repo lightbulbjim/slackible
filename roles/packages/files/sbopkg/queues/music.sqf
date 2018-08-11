@@ -1,3 +1,5 @@
+# Managed by Ansible
+
 # ABCDE
 perl-Mojolicious
 perl-WebService-MusicBrainz
@@ -23,4 +25,9 @@ graveman
 
 # shntool
 shntool
+
+# FileZilla
+wxGTK3
+libfilezilla
+filezilla
 
