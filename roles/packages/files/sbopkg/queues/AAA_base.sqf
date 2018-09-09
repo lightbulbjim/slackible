@@ -1,5 +1,8 @@
 # Managed by Ansible
 
+# cpulimit
+cpulimit
+
 # ctorrent
 ctorrent
 
