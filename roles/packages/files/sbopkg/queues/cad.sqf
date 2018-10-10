@@ -57,8 +57,3 @@ qt5
 VTK
 OpenCASCADE
 FreeCAD
-
-# OpenSCAD
-OpenCSG
-CGAL
-openscad
